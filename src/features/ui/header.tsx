@@ -2,11 +2,12 @@ import { Button } from "@features/button";
 import LogoIcon from "@features/icons/icon/logo";
 import { styled, keyframes } from "styled-components";
 import { BsDiscord, BsTwitterX } from "react-icons/bs";
-import { useState } from "react";
+import { useApp } from "contexts";
 
 const MainContainer = styled.div`
   position: fixed;
   width: 100vw;
+  z-index: 5;
 `;
 
 const HeaderContainer = styled.div`
@@ -78,7 +79,7 @@ const TwitterIcon = styled(BsTwitterX)`
   color: #252525;
 `;
 
-const LearnMoreButton = styled(ItemCenter)`
+export const LearnMoreButton = styled(ItemCenter)`
   justify-content: center;
   padding: 14px 30px;
   border-radius: 60px;
@@ -254,7 +255,7 @@ const shakeAnimation = keyframes`
 100% {rotate: 20deg;}
 `;
 
-const ActionIcon = styled(ItemCenter)`
+export const ActionIcon = styled(ItemCenter)`
   justify-content: center;
   position: absolute;
   top: -15px;
@@ -284,7 +285,7 @@ const VisibleButton = styled.div`
 `;
 
 export function Header() {
-  const [active, setActive] = useState(false);
+  const { activeMenu, setActiveMenu } = useApp();
 
   return (
     <MainContainer>
@@ -316,11 +317,14 @@ export function Header() {
             </LearnMoreButton>
           </Button> */}
           <Button style="Menu">
-            <MenuButton $active={active} onClick={() => setActive(!active)}>
-              <MenuIcon className={`${active ? "active" : ""}`}>
-                <div className={`line-1 ${active ? "" : "no-animation"}`} />
-                <div className={`line-2 ${active ? "" : "no-animation"}`} />
-                <div className={`line-3 ${active ? "" : "no-animation"}`} />
+            <MenuButton
+              $active={activeMenu}
+              onClick={() => setActiveMenu(!activeMenu)}
+            >
+              <MenuIcon className={`${activeMenu ? "active" : ""}`}>
+                <div className={`line-1 ${activeMenu ? "" : "no-animation"}`} />
+                <div className={`line-2 ${activeMenu ? "" : "no-animation"}`} />
+                <div className={`line-3 ${activeMenu ? "" : "no-animation"}`} />
               </MenuIcon>
               <ButtonText>menu</ButtonText>
             </MenuButton>
