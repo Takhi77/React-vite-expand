@@ -46,7 +46,6 @@ const Logo = styled(ItemCenter)`
     height: 52px;
     padding: 0 10px;
     border-radius: 11px;
-    box-sizing: border-box;
   }
 `;
 

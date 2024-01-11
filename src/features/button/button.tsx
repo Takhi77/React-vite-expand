@@ -2,16 +2,19 @@ import { styled } from "styled-components";
 import { ReactNode } from "react";
 
 const MainContainer = styled.div<{ $style?: string }>`
-  filter: ${({ $style }) =>
-    $style === "Logo"
-      ? "drop-shadow(4px 4px 0px #000)"
-      : "drop-shadow(0 4px 0px #000)"};
-
-  @media only screen and (max-width: 640px) {
+  transition: 0.2s all;
+  &:hover {
     filter: ${({ $style }) =>
-      $style === "Menu"
+      $style === "Logo"
         ? "drop-shadow(4px 4px 0px #000)"
         : "drop-shadow(0 4px 0px #000)"};
+
+    @media only screen and (max-width: 640px) {
+      filter: ${({ $style }) =>
+        $style === "Menu"
+          ? "drop-shadow(4px 4px 0px #000)"
+          : "drop-shadow(0 4px 0px #000)"};
+    }
   }
 `;
 
