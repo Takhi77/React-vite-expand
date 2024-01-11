@@ -6,7 +6,8 @@ import { useApp } from "contexts";
 
 const MainContainer = styled.div`
   position: fixed;
-  width: 100vw;
+  max-width: 100vw;
+  width: 100%;
   z-index: 5;
 `;
 

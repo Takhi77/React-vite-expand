@@ -3,6 +3,10 @@ import BarricadaTTF from "./assets/fonts/BarricadaW01-Regular.ttf";
 import MatterTTF from "./assets/fonts/Matter Regular.ttf";
 
 const GlobalStyle = createGlobalStyle`
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
