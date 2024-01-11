@@ -27,7 +27,9 @@ const Abatar = styled.div<{ $color: string }>`
   justify-content: center;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  max-width: 100%;
+`;
 
 const Cardboard = styled.div`
   display: grid;
