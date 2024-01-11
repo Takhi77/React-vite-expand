@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import BarricadaTTF from "./assets/fonts/BarricadaW01-Regular.ttf";
+import MatterTTF from "./assets/fonts/Matter Regular.ttf";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -17,6 +18,13 @@ body {
     font-family: 'BarricadaW01-Regular';
     src: url(${BarricadaTTF}) format('truetype');
     font-weight: 400;
+    font-display: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url(${MatterTTF}) format('truetype');
     font-display: auto;
     font-style: normal;
 }

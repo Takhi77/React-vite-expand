@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 
 const MainContainer = styled.div<{ $style?: string }>`
   transition: 0.2s all;
+  width: fit-content;
   &:hover {
     filter: ${({ $style }) =>
       $style === "Logo"

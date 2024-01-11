@@ -26,7 +26,7 @@ const Container = styled.div`
   }
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #252525;
   text-align: center;
   font-family: BarricadaW01-Regular;
@@ -54,7 +54,7 @@ const Content = styled.h3`
   }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 94px;
 
   @media only screen and (max-width: 640px) {
@@ -62,7 +62,7 @@ const Image = styled.img`
   }
 `;
 
-const Group = styled.div`
+export const Group = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@ const Group = styled.div`
   }
 `;
 
-const TitleImage = styled.img`
+export const TitleImage = styled.img`
   height: 94px;
   width: fit-content;
   display: none;
