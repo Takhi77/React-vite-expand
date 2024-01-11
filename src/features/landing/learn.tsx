@@ -1,6 +1,7 @@
 import { Button } from "@features/button";
 import { styled } from "styled-components";
 import learn from "../../assets/img/main/learn.png";
+import { Title } from "./library";
 
 const MainContainer = styled.div`
   max-width: 100vw;
@@ -9,12 +10,17 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 90px;
+  box-shadow: inset 0 3px 1px -1px #252525;
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1279px) {
     flex-direction: column;
     height: fit-content;
-    padding: 58px 20px;
+    padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 58px 0;
+    gap: 45px;
   }
 `;
 
@@ -25,19 +31,18 @@ const Right = styled.div`
   flex-direction: column;
   gap: 38px;
   width: 553px;
+
+  @media only screen and (max-width: 1279px) {
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100% - 36px);
+    gap: 18px;
+  }
 `;
 
-const Title = styled.h2`
-  color: #252525;
-  font-family: BarricadaW01-Regular;
-  font-size: 76px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0;
-`;
-
-const Subtitle = styled.h2`
+export const Subtitle = styled.h2`
   color: #252525;
   font-family: Rubik;
   font-size: 26px;
@@ -45,6 +50,14 @@ const Subtitle = styled.h2`
   font-weight: 400;
   line-height: normal;
   margin: 0;
+
+  @media only screen and (max-width: 1279px) {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 22px;
+  }
 `;
 
 const LearnButton = styled.div`

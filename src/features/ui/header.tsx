@@ -22,12 +22,12 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const ItemCenter = styled.div`
+export const ItemCenter = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const Logo = styled(ItemCenter)`
+export const Logo = styled(ItemCenter)`
   width: 76px;
   height: 76px;
   border-radius: 16px;
@@ -49,11 +49,11 @@ const Logo = styled(ItemCenter)`
   }
 `;
 
-const FeatureContainer = styled(ItemCenter)`
+export const FeatureContainer = styled(ItemCenter)`
   gap: 10px;
 `;
 
-const SocialButton = styled(ItemCenter)`
+export const SocialButton = styled(ItemCenter)`
   width: 66px;
   height: 66px;
   justify-content: center;
@@ -68,12 +68,12 @@ const SocialButton = styled(ItemCenter)`
   }
 `;
 
-const DiscordIcon = styled(BsDiscord)`
+export const DiscordIcon = styled(BsDiscord)`
   font-size: 30px;
   color: #252525;
 `;
 
-const TwitterIcon = styled(BsTwitterX)`
+export const TwitterIcon = styled(BsTwitterX)`
   font-size: 30px;
   color: #252525;
 `;

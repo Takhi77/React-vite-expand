@@ -13,25 +13,55 @@ const MainContainer = styled.div`
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   gap: 45px;
+  box-shadow: inset 0 3px 1px -1px #252525;
+
+  @media only screen and (max-width: 1279px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    height: fit-content;
+    padding: 58px 0;
+  }
+
+  @media only screen and (max-width: 1279px) {
+    padding: 120px 0;
+  }
 `;
 
 const Left = styled.div`
   align-self: center;
+  justify-self: end;
   display: flex;
   flex-direction: column;
   gap: 38px;
+  width: 620px;
+
+  @media only screen and (max-width: 1279px) {
+    justify-self: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 640px) {
+    gap: 18px;
+    width: calc(100% - 36px);
+  }
 `;
 
 export const Title = styled.h2`
   margin: 0;
   color: #252525;
-  leading-trim: both;
-  text-edge: cap;
   font-family: BarricadaW01-Regular;
   font-size: 76px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+
+  @media only screen and (max-width: 1279px) {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 46px;
+  }
 `;
 
 export const Subtitle = styled.h3`
@@ -42,6 +72,14 @@ export const Subtitle = styled.h3`
   font-weight: 400;
   line-height: normal;
   margin: 0;
+
+  @media only screen and (max-width: 1279px) {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 22px;
+  }
 `;
 
 const LibraryButton = styled.div`

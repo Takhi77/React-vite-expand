@@ -6,9 +6,13 @@ import { Subtitle, Title } from "./library";
 
 const MainContainer = styled.div`
   max-width: 100vw;
-  height: 956px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media only screen and (max-width: 1279px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
 `;
 
 const List = styled.div`
@@ -17,6 +21,15 @@ const List = styled.div`
   gap: 38px;
   justify-content: center;
   width: 462px;
+
+  @media only screen and (max-width: 1279px) {
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(100vw - 40px);
+    gap: 18px;
+  }
 `;
 
 const Left = styled.div`
@@ -24,9 +37,24 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
-
+  padding: 210px 0;
+  box-shadow: inset -3px 3px 1px -1px #252525;
   ${List} {
     margin-right: 146px;
+  }
+
+  @media only screen and (max-width: 1279px) {
+    padding: 160px 0;
+    justify-content: center;
+    box-shadow: inset 0 3px 1px -1px #252525;
+
+    ${List} {
+      margin: 0;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 58px 0;
   }
 `;
 
@@ -34,9 +62,19 @@ const Right = styled.div`
   background-color: #caf2ff;
   display: flex;
   align-items: center;
+  box-shadow: inset -3px 3px 1px -1px #252525;
 
   ${List} {
     margin-left: 146px;
+  }
+
+  @media only screen and (max-width: 1279px) {
+    justify-content: center;
+    box-shadow: inset 0 3px 1px -1px #252525;
+
+    ${List} {
+      margin: 0;
+    }
   }
 `;
 
@@ -78,7 +116,7 @@ export const Team = () => {
           </Subtitle>
           <Button>
             <ButtonStructure>
-              <ButtonText>learn more</ButtonText>
+              <ButtonText>stalk the team</ButtonText>
             </ButtonStructure>
           </Button>
         </List>
