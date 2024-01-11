@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { Group, Image, Title, TitleImage } from "./welcome";
 import icon from "../../assets/img/main/black_icon.png";
+import { Subtitle } from "./learn";
 
 const MainContainer = styled.div`
   max-width: 100vw;
@@ -10,24 +11,29 @@ const MainContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: inset 0 3px 1px -1px #252525;
   gap: 38px;
+
+  @media (max-width: 1279px) {
+    height: fit-content;
+    padding: 100px 0;
+  }
+
+  @media (max-width: 640px) {
+    padding: 58px 0;
+    gap: 18px;
+  }
 `;
 
 const UGroup = styled(Group)`
-  width: 976px;
+  max-width: 976px;
+  width: calc(100% - 36px);
 `;
 
-const Subtitle = styled.h3`
-  margin: 0;
-  color: #252525;
+const USubtitle = styled(Subtitle)`
   text-align: center;
-  font-family: Rubik;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  width: 710px;
+  max-width: 710px;
+  width: calc(100% - 36px);
 `;
 
 export const Support = () => {
@@ -40,14 +46,14 @@ export const Support = () => {
           Koala konservation
         </Title>
       </UGroup>
-      <Subtitle>
+      <USubtitle>
         At Kiki Koalas, we're dedicated to protecting koalas from the wild and
         natural disasters in Australia. We will donate a portion of our raised
         funds to koala conservation efforts, helping to ensure their safety and
         survival. By collecting Kiki Koalas NFTs, you contribute to this vital
         cause, making a difference in the lives of these beloved Australian
         icons.
-      </Subtitle>
+      </USubtitle>
     </MainContainer>
   );
 };

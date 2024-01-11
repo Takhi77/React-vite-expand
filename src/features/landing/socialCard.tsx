@@ -9,6 +9,10 @@ const MainContainer = styled.div<{ $angle: string }>`
 
   &:hover {
     filter: drop-shadow(4px 4px 0px #000);
+
+    @media (max-width: 640px) {
+      filter: drop-shadow(3px 3px 0px #000);
+    }
     rotate: 0deg;
   }
 `;
@@ -24,6 +28,12 @@ const Container = styled.div`
   border: 3px solid #000;
   background: #fff;
   box-sizing: border-box;
+
+  @media (max-width: 640px) {
+    width: 148px;
+    padding: 14px 12px 20px;
+    gap: 12px;
+  }
 `;
 
 const Title = styled.h3`
@@ -36,6 +46,10 @@ const Title = styled.h3`
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
+
+  @media (max-width: 640px) {
+    font-size: 19px;
+  }
 `;
 
 const Banner = styled.div<{ $color: string }>`
@@ -48,11 +62,19 @@ const Banner = styled.div<{ $color: string }>`
   border-radius: 10px;
   border: 3px solid #252525;
   background: ${({ $color }) => $color};
+
+  @media (max-width: 640px) {
+    height: 105px;
+  }
 `;
 
 const Icon = styled.div`
   font-size: 69px;
   color: white;
+
+  @media (max-width: 640px) {
+    font-size: 55px;
+  }
 `;
 
 export const SocialCard = ({ type }: { type: string }) => {

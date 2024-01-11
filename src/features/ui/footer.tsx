@@ -1,5 +1,6 @@
 import { Button } from "@features/button";
 import LogoIcon from "@features/icons/icon/logo";
+import { Subtitle } from "@features/landing/learn";
 import { styled } from "styled-components";
 import {
   DiscordIcon,
@@ -24,14 +25,26 @@ const FooterContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 54px;
+
+  @media (max-width: 640px) {
+    gap: 39px;
+    padding: 54px 37px 44px;
+  }
 `;
 
 const Header = styled(ItemCenter)`
   justify-content: space-between;
+
+  @media (max-width: 640px) {
+    justify-content: center;
+  }
 `;
 
 const LogoGroup = styled(ItemCenter)`
   gap: 24px;
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
 const LogoText = styled.h2`
@@ -49,16 +62,10 @@ const Body = styled.div`
   flex-direction: column;
   gap: 42px;
   max-width: 710px;
-`;
 
-const FooterText = styled.h3`
-  color: #252525;
-  font-family: Rubik;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0;
+  @media (max-width: 640px) {
+    align-items: center;
+  }
 `;
 
 const Item = styled.div`
@@ -71,6 +78,34 @@ const Links = styled.div`
   gap: 26px;
 `;
 
+const BLinks = styled(Links)`
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+`;
+
+const UFeatureContainer = styled(FeatureContainer)`
+  @media (max-width: 640px) {
+    display: none;
+  }
+`;
+
+const UBFeatureContainer = styled(FeatureContainer)`
+  display: none;
+
+  @media (max-width: 640px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const ULogo = styled(Logo)`
+  @media only screen and (max-width: 640px) {
+    width: 76px;
+    height: 76px;
+  }
+`;
+
 export function Footer() {
   return (
     <MainContainer>
@@ -78,13 +113,13 @@ export function Footer() {
         <Header>
           <LogoGroup>
             <Button style="Logo">
-              <Logo>
+              <ULogo>
                 <LogoIcon />
-              </Logo>
+              </ULogo>
             </Button>
             <LogoText>kiki koalas</LogoText>
           </LogoGroup>
-          <FeatureContainer>
+          <UFeatureContainer>
             <Button>
               <SocialButton>
                 <TwitterIcon />
@@ -95,36 +130,48 @@ export function Footer() {
                 <DiscordIcon />
               </SocialButton>
             </Button>
-          </FeatureContainer>
+          </UFeatureContainer>
         </Header>
         <Body>
-          <FooterText>
+          <Subtitle>
             Kick back with 3,333 Kiki Koalas, as we create an ecosystem that
             forms a community beyond pixels.
-          </FooterText>
+          </Subtitle>
           <Links>
             <Item>
-              <FooterText>Home</FooterText>
+              <Subtitle>Home</Subtitle>
             </Item>
             <Item>
-              <FooterText>Art</FooterText>
+              <Subtitle>Art</Subtitle>
             </Item>
             <Item>
-              <FooterText>Team</FooterText>
+              <Subtitle>Team</Subtitle>
             </Item>
             <Item>
-              <FooterText>FAQs</FooterText>
+              <Subtitle>FAQs</Subtitle>
             </Item>
           </Links>
         </Body>
-        <Links>
+        <BLinks>
           <Item>
-            <FooterText>Privacy policy</FooterText>
+            <Subtitle>Privacy policy</Subtitle>
           </Item>
           <Item>
-            <FooterText>Terms of service</FooterText>
+            <Subtitle>Terms of service</Subtitle>
           </Item>
-        </Links>
+        </BLinks>
+        <UBFeatureContainer>
+          <Button>
+            <SocialButton>
+              <TwitterIcon />
+            </SocialButton>
+          </Button>
+          <Button>
+            <SocialButton>
+              <DiscordIcon />
+            </SocialButton>
+          </Button>
+        </UBFeatureContainer>
       </FooterContainer>
     </MainContainer>
   );

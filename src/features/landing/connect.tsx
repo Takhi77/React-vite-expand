@@ -14,15 +14,29 @@ const MainContainer = styled.div`
   justify-content: center;
   gap: 30px;
   box-shadow: inset 0 3px 1px -1px #252525;
+
+  @media (max-width: 1279px) {
+    height: fit-content;
+    padding: 100px 0;
+  }
+
+  @media (max-width: 640px) {
+    padding: 58px 0;
+    gap: 18px;
+  }
 `;
 
 const UGroup = styled(Group)`
-  width: 976px;
+  max-width: 976px;
+  width: calc(100% - 36px);
 `;
 
 const SocialGroup = styled.div`
+  width: calc(100% - 36px);
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 `;
 
 export const Connect = () => {
