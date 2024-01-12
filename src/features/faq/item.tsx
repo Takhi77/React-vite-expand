@@ -67,6 +67,10 @@ const Subtitle = styled.h3`
   font-weight: 400;
   line-height: normal;
   margin: 0;
+
+  @media (max-width: 640px) {
+    font-size: 22px;
+  }
 `;
 
 const ActiveButton = styled.div<{ $active: boolean }>`

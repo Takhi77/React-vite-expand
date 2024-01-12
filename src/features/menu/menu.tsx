@@ -3,6 +3,7 @@ import { useApp } from "contexts";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import menuKoala from "../../assets/img/menu/menu_koala.png";
+import { useEffect } from "react";
 
 const MainContainer = styled.div<{ $active: boolean }>`
   max-width: ${({ $active }) => ($active ? "100vw" : "0")};
@@ -90,6 +91,16 @@ const Item = styled.div`
 export const Menu = () => {
   const { activeMenu, setActiveMenu } = useApp();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (activeMenu) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [activeMenu]);
+
   return (
     <MainContainer $active={activeMenu}>
       <Container>
