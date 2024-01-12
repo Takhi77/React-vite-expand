@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 interface faqProps {
   title: string;
@@ -37,20 +37,6 @@ const Title = styled.h2`
   }
 `;
 
-const Button = styled.h2`
-  color: #252525;
-  font-family: BarricadaW01-Regular;
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  margin: 0;
-
-  @media (max-width: 640px) {
-    font-size: 26px;
-  }
-`;
-
 const Main = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,22 +45,60 @@ const Main = styled.div`
 `;
 
 const Detail = styled.div<{ $active: boolean }>`
+  transition: all 400ms linear;
+  overflow: hidden;
+
+  ${({ $active }) =>
+    $active
+      ? css`
+          max-height: 400px;
+        `
+      : css`
+          max-height: 0;
+        `}
+`;
+
+const Subtitle = styled.h3`
+  padding-top: 32px;
   color: #252525;
   font-family: Rubik;
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
-  transition: 0.4s all;
-  overflow: hidden;
-
-  max-height: ${({ $active }) => ($active ? "500vh" : "0")};
-  height: 100%;
-  padding-top: ${({ $active }) => ($active ? "32px" : "0")};
+  margin: 0;
 `;
 
-// const ActiveButton =
+const ActiveButton = styled.div<{ $active: boolean }>`
+  position: relative;
+  h2 {
+    color: #252525;
+    font-family: BarricadaW01-Regular;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 40px;
+    margin: 0;
+    transform: scale(1.5, 1);
+
+    &:last-child {
+      position: absolute;
+      top: 0;
+      transition: 0.2s all linear;
+    }
+  }
+
+  ${({ $active }) =>
+    $active &&
+    css`
+      h2 {
+        &:last-child {
+          transform: rotate(90deg) scale(1.5, 1) translateY(-2px)
+            translateX(1px);
+        }
+      }
+    `}
+`;
 
 export const Item = ({
   data,
@@ -89,6 +113,8 @@ export const Item = ({
     console.log(active, data);
     if (active !== data.id) {
       setActive(data.id);
+    } else if (active === data.id) {
+      setActive(-1);
     }
   };
 
@@ -97,21 +123,15 @@ export const Item = ({
       <MainContainer onClick={handleSet}>
         <Container>
           <Title>{data.title}</Title>
-          <Button>{active === data.id ? "-" : "+"}</Button>
-          {/* <ActiveButton
-              $active={activeMenu}
-              onClick={() => setActiveMenu(!activeMenu)}
-            >
-              <MenuIcon className={`${activeMenu ? "active" : ""}`}>
-                <div className={`line-1 ${activeMenu ? "" : "no-animation"}`} />
-                <div className={`line-2 ${activeMenu ? "" : "no-animation"}`} />
-                <div className={`line-3 ${activeMenu ? "" : "no-animation"}`} />
-              </MenuIcon>
-              <ButtonText>menu</ButtonText>
-            </ActiveButton> */}
+          <ActiveButton $active={active !== data.id}>
+            <h2>-</h2>
+            <h2>-</h2>
+          </ActiveButton>
         </Container>
       </MainContainer>
-      <Detail $active={active === data.id}>{data.detail}</Detail>
+      <Detail $active={active === data.id}>
+        <Subtitle>{data.detail}</Subtitle>
+      </Detail>
     </Main>
   );
 };
