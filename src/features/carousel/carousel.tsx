@@ -1,4 +1,15 @@
-import { keyframes, styled } from "styled-components";
+import { wrap } from "@motionone/utils";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useScroll,
+  useVelocity,
+  useSpring,
+  useTransform,
+} from "framer-motion";
+import { useRef, ReactNode } from "react";
+import { styled } from "styled-components";
 
 const MainContainer = styled.div`
   max-width: 100vw;
@@ -6,18 +17,7 @@ const MainContainer = styled.div`
   box-shadow: inset 0 3px 1px -1px #252525;
 `;
 
-const Textanim = (y: number) => keyframes`
-0% {
-    transform: translateX(0);
-}
-100% {
-    transform: translateX(-${y}px);
-}`;
-
 const TextDiv = styled.div`
-  white-space: nowrap;
-  overflow: hidden;
-  width: 100%;
   padding: 48px 0;
 
   @media (max-width: 640px) {
@@ -25,8 +25,7 @@ const TextDiv = styled.div`
   }
 `;
 
-const Text = styled.h2<{ $distance: number }>`
-  display: inline-block;
+const Text = styled.h2`
   color: #252525;
   text-align: center;
   font-family: BarricadaW01-Regular;
@@ -37,18 +36,80 @@ const Text = styled.h2<{ $distance: number }>`
   text-transform: uppercase;
   margin: 0;
 
-  animation: ${({ $distance }) => Textanim($distance)} 5s infinite linear;
-
   @media (max-width: 640px) {
     font-size: 32px;
   }
 `;
 
+const Motion = styled(motion.div)`
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+`;
+
+const Parallax = styled.div`
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
+interface ParallaxProps {
+  children: ReactNode;
+  baseVelocity: number;
+}
+
+function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    clamp: false,
+  });
+
+  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+
+  const directionFactor = useRef<number>(1);
+
+  useAnimationFrame((_, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
+
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  return (
+    <Parallax>
+      <Motion style={{ x }}>
+        {children}
+        {children}
+        {children}
+        {children}
+        {children}
+        {children}
+      </Motion>
+    </Parallax>
+  );
+}
+
 export const Carousel = ({ text }: { text: string }) => {
   return (
     <MainContainer>
       <TextDiv>
-        <Text $distance={text.length * 16}>{text}</Text>
+        <ParallaxText baseVelocity={-3}>
+          <Text>{text}</Text>
+        </ParallaxText>
       </TextDiv>
     </MainContainer>
   );

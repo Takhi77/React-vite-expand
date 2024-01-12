@@ -58,7 +58,7 @@ const Main = styled.div`
   width: calc(100% - 40px);
 `;
 
-const Detail = styled.div`
+const Detail = styled.div<{ $active: boolean }>`
   color: #252525;
   font-family: Rubik;
   font-size: 26px;
@@ -73,6 +73,8 @@ const Detail = styled.div`
   height: 100%;
   padding-top: ${({ $active }) => ($active ? "32px" : "0")};
 `;
+
+// const ActiveButton =
 
 export const Item = ({
   data,
@@ -96,6 +98,17 @@ export const Item = ({
         <Container>
           <Title>{data.title}</Title>
           <Button>{active === data.id ? "-" : "+"}</Button>
+          {/* <ActiveButton
+              $active={activeMenu}
+              onClick={() => setActiveMenu(!activeMenu)}
+            >
+              <MenuIcon className={`${activeMenu ? "active" : ""}`}>
+                <div className={`line-1 ${activeMenu ? "" : "no-animation"}`} />
+                <div className={`line-2 ${activeMenu ? "" : "no-animation"}`} />
+                <div className={`line-3 ${activeMenu ? "" : "no-animation"}`} />
+              </MenuIcon>
+              <ButtonText>menu</ButtonText>
+            </ActiveButton> */}
         </Container>
       </MainContainer>
       <Detail $active={active === data.id}>{data.detail}</Detail>

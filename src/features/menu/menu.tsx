@@ -132,6 +132,7 @@ export const Menu = () => {
           </Item>
           <Item>
             <LinkText>3D Library</LinkText>
+            <ActionIcon>soon</ActionIcon>
           </Item>
         </Menus>
         <Image src={menuKoala} alt="" />
