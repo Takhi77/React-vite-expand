@@ -20,7 +20,7 @@ const MainContainer = styled.div`
   }
 `;
 
-const Left = styled.div`
+const Left = styled.div<{ $color: string }>`
   display: flex;
   align-items: center;
   justify-content: end;
