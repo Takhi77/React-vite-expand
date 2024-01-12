@@ -1,5 +1,6 @@
 import { ActionIcon } from "@features/ui";
 import { useApp } from "contexts";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import menuKoala from "../../assets/img/menu/menu_koala.png";
 
@@ -12,7 +13,7 @@ const MainContainer = styled.div<{ $active: boolean }>`
   overflow: hidden;
   right: 0;
   transition: 1.5s all;
-  z-index: 2;
+  z-index: 3;
 `;
 
 const Container = styled.div`
@@ -87,21 +88,42 @@ const Item = styled.div`
 `;
 
 export const Menu = () => {
-  const { activeMenu } = useApp();
+  const { activeMenu, setActiveMenu } = useApp();
+  const navigate = useNavigate();
   return (
     <MainContainer $active={activeMenu}>
       <Container>
         <Menus>
-          <Item>
+          <Item
+            onClick={() => {
+              navigate("/");
+              setActiveMenu(false);
+            }}
+          >
             <LinkText>Home</LinkText>
           </Item>
-          <Item>
+          <Item
+            onClick={() => {
+              navigate("/art");
+              setActiveMenu(false);
+            }}
+          >
             <LinkText>Art</LinkText>
           </Item>
-          <Item>
+          <Item
+            onClick={() => {
+              navigate("/team");
+              setActiveMenu(false);
+            }}
+          >
             <LinkText>Team</LinkText>
           </Item>
-          <Item>
+          <Item
+            onClick={() => {
+              navigate("/faq");
+              setActiveMenu(false);
+            }}
+          >
             <LinkText>FAQs</LinkText>
           </Item>
           <Item>

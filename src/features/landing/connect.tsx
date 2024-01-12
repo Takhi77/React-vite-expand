@@ -45,7 +45,7 @@ export const Connect = () => {
       <UGroup>
         <TitleImage src={icon} />
         <Title>
-          Connect <Image src={icon} />
+          Konnect <Image src={icon} />
           with us
         </Title>
       </UGroup>

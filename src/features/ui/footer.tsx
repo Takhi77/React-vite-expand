@@ -1,6 +1,7 @@
 import { Button } from "@features/button";
 import LogoIcon from "@features/icons/icon/logo";
 import { Subtitle } from "@features/landing/learn";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import {
   DiscordIcon,
@@ -107,16 +108,20 @@ const ULogo = styled(Logo)`
 `;
 
 export function Footer() {
+  const navigate = useNavigate();
+
   return (
     <MainContainer>
       <FooterContainer>
         <Header>
           <LogoGroup>
-            <Button style="Logo">
-              <ULogo>
-                <LogoIcon />
-              </ULogo>
-            </Button>
+            <div onClick={() => navigate("/")}>
+              <Button style="Logo">
+                <ULogo>
+                  <LogoIcon />
+                </ULogo>
+              </Button>
+            </div>
             <LogoText>kiki koalas</LogoText>
           </LogoGroup>
           <UFeatureContainer>
@@ -138,16 +143,16 @@ export function Footer() {
             forms a community beyond pixels.
           </Subtitle>
           <Links>
-            <Item>
+            <Item onClick={() => navigate("/")}>
               <Subtitle>Home</Subtitle>
             </Item>
-            <Item>
+            <Item onClick={() => navigate("/art")}>
               <Subtitle>Art</Subtitle>
             </Item>
-            <Item>
+            <Item onClick={() => navigate("/team")}>
               <Subtitle>Team</Subtitle>
             </Item>
-            <Item>
+            <Item onClick={() => navigate("/faq")}>
               <Subtitle>FAQs</Subtitle>
             </Item>
           </Links>

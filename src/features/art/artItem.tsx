@@ -25,9 +25,12 @@ const Left = styled.div<{ $color: string }>`
   align-items: center;
   justify-content: end;
   background-color: ${({ $color }) => $color};
+  border-right: 2px solid #000;
 
   @media (max-width: 1279px) {
     justify-content: center;
+    border-right: 0;
+    border-top: 2px solid #000;
   }
 `;
 

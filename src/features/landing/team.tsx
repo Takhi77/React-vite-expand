@@ -1,6 +1,7 @@
 import { Button } from "@features/button";
 import Star from "@features/icons/icon/star";
 import { ActionIcon } from "@features/ui";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import { Subtitle, Title } from "./library";
 
@@ -104,6 +105,8 @@ const ButtonText = styled.h3`
 `;
 
 export const Team = () => {
+  const navigate = useNavigate();
+
   return (
     <MainContainer>
       <Left>
@@ -114,11 +117,13 @@ export const Team = () => {
             Sink your claws into the team leading the Kiki Koalas to lofty gum
             tree tops.
           </Subtitle>
-          <Button>
-            <ButtonStructure>
-              <ButtonText>stalk the team</ButtonText>
-            </ButtonStructure>
-          </Button>
+          <div onClick={() => navigate("/team")}>
+            <Button>
+              <ButtonStructure>
+                <ButtonText>stalk the team</ButtonText>
+              </ButtonStructure>
+            </Button>
+          </div>
         </List>
       </Left>
       <Right>

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import BarricadaTTF from "./assets/fonts/BarricadaW01-Regular.ttf";
-import MatterTTF from "./assets/fonts/Matter Regular.ttf";
+import MatterTTF from "./assets/fonts/Matter.ttf";
 
 const GlobalStyle = createGlobalStyle`
 * {

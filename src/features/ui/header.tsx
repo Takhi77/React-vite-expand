@@ -3,6 +3,7 @@ import LogoIcon from "@features/icons/icon/logo";
 import { styled, keyframes } from "styled-components";
 import { BsDiscord, BsTwitterX } from "react-icons/bs";
 import { useApp } from "contexts";
+import { useNavigate } from "react-router-dom";
 
 const MainContainer = styled.div`
   position: fixed;
@@ -287,15 +288,18 @@ const VisibleButton = styled.div`
 
 export function Header() {
   const { activeMenu, setActiveMenu } = useApp();
+  const navigate = useNavigate();
 
   return (
     <MainContainer>
       <HeaderContainer>
-        <Button style="Logo">
-          <Logo>
-            <LogoIcon />
-          </Logo>
-        </Button>
+        <div onClick={() => navigate("/")}>
+          <Button style="Logo">
+            <Logo>
+              <LogoIcon />
+            </Logo>
+          </Button>
+        </div>
         <FeatureContainer>
           <VisibleButton>
             <Button>
