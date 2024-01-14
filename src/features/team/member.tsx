@@ -39,11 +39,20 @@ const Cardboard = styled.div`
 
   width: 100%;
   border-top: 3px solid #000;
+
+  @media (max-width: 640px) {
+    padding: 30px 18px;
+    gap: 44px;
+  }
 `;
 
 const Role = styled.div`
   filter: drop-shadow(0 4px 0 #000);
   width: fit-content;
+
+  @media (max-width: 640px) {
+    justify-self: center;
+  }
 `;
 
 const RoleDiv = styled.div<{ $color: string }>`
@@ -75,6 +84,10 @@ const Name = styled.h2`
   font-weight: 400;
   line-height: normal;
   margin: 0;
+
+  @media (max-width: 640px) {
+    text-align: center;
+  }
 `;
 
 const Detail = styled.h3`
@@ -87,12 +100,16 @@ const Detail = styled.h3`
   font-weight: 400;
   line-height: normal;
   margin: 0;
+
+  @media (max-width: 640px) {
+    text-align: center;
+  }
 `;
 
 const SocialButton = styled.div`
   border-radius: 14px;
   border: 1px solid #252525;
-  padding: 17px;
+  padding: 17px 17px 10px;
   font-size: 30px;
   color: #252525;
 
@@ -102,6 +119,11 @@ const SocialButton = styled.div`
 
   &:hover {
     background-color: #f8d467;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 `;
 

@@ -1,9 +1,9 @@
-import { ActionIcon } from "@features/ui";
 import { useApp } from "contexts";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import menuKoala from "../../assets/img/menu/menu_koala.png";
 import { useEffect } from "react";
+import { ActionIcon } from "@features/landing/team";
 
 const MainContainer = styled.div<{ $active: boolean }>`
   max-width: ${({ $active }) => ($active ? "100vw" : "0")};
@@ -15,13 +15,17 @@ const MainContainer = styled.div<{ $active: boolean }>`
   right: 0;
   transition: 1.5s all;
   z-index: 3;
+
+  display: flex;
+  justify-content: center;
 `;
 
 const Container = styled.div`
+  max-width: 1440px;
   position: absolute;
   bottom: 100px;
   padding: 0 55px;
-  width: calc(100vw - 110px);
+  width: calc(100vw);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -85,6 +89,10 @@ const Item = styled.div`
     ${LinkText} {
       text-shadow: 10px 4px 0px #f8d467;
     }
+
+    ${ActionIcon} {
+      rotate: -10deg;
+    }
   }
 `;
 
@@ -142,7 +150,7 @@ export const Menu = () => {
             <ActionIcon>soon</ActionIcon>
           </Item>
           <Item>
-            <LinkText>3D Library</LinkText>
+            <LinkText>Kiki Kasino</LinkText>
             <ActionIcon>soon</ActionIcon>
           </Item>
         </Menus>

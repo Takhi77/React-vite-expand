@@ -9,6 +9,7 @@ const MainContainer = styled.div`
   padding: 223px 0 125px;
   background-color: #f7f7f7;
   gap: 22px;
+  overflow: hidden;
 
   @media (max-width: 640px) {
     padding: 231px 0 89px;

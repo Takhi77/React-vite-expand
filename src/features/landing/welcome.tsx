@@ -8,6 +8,7 @@ const MainContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 3px 1px -1px #252525;
 
   @media only screen and (max-width: 640px) {
     height: 671px;

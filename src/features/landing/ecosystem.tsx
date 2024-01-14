@@ -1,9 +1,8 @@
 import { Button } from "@features/button";
-import { ActionIcon } from "@features/ui";
 import { styled } from "styled-components";
 import { Subtitle } from "./learn";
 import { Title } from "./library";
-import { ButtonStructure } from "./team";
+import { ActionIcon, ButtonStructure } from "./team";
 
 const MainContainer = styled.div`
   max-width: 100vw;

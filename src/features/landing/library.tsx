@@ -1,5 +1,5 @@
 import { Button } from "@features/button";
-import Rotate from "@features/icons/icon/rotate";
+// import Rotate from "@features/icons/icon/rotate";
 import Star from "@features/icons/icon/star";
 import { styled } from "styled-components";
 import basic from "../../assets/img/main/basic.png";
@@ -100,6 +100,11 @@ const LibraryButton = styled.div`
 
   &:hover {
     background-color: #f8d467;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 `;
 
@@ -111,17 +116,17 @@ const Right = styled.div`
   justify-content: center;
 `;
 
-const RotateButton = styled.div`
-  border-radius: 60px;
-  border: 1px solid #252525;
-  background-color: white;
-  padding: 18px 30px;
-  cursor: pointer;
+// const RotateButton = styled.div`
+//   border-radius: 60px;
+//   border: 1px solid #252525;
+//   background-color: white;
+//   padding: 18px 30px;
+//   cursor: pointer;
 
-  &:hover {
-    background-color: #f8d467;
-  }
-`;
+//   &:hover {
+//     background-color: #f8d467;
+//   }
+// `;
 
 export const Library = () => {
   return (
@@ -135,16 +140,16 @@ export const Library = () => {
           files for endless creative possibilities.
         </Subtitle>
         <Button>
-          <LibraryButton>3d library</LibraryButton>
+          <LibraryButton>Kiki Kasino</LibraryButton>
         </Button>
       </Left>
       <Right>
         <img src={basic} alt="" />
-        <Button>
+        {/* <Button>
           <RotateButton>
             <Rotate />
           </RotateButton>
-        </Button>
+        </Button> */}
       </Right>
     </MainContainer>
   );

@@ -7,13 +7,27 @@ const MainContainer = styled.div<{ $angle: string }>`
   cursor: pointer;
   rotate: ${({ $angle }) => $angle}deg;
 
+  filter: drop-shadow(4px 4px 0px #000);
+
+  @media (max-width: 640px) {
+    filter: drop-shadow(3px 3px 0px #000);
+  }
+
   &:hover {
-    filter: drop-shadow(4px 4px 0px #000);
+    filter: drop-shadow(2px 2px 0px #000);
 
     @media (max-width: 640px) {
-      filter: drop-shadow(3px 3px 0px #000);
+      filter: drop-shadow(2px 2px 0px #000);
     }
     rotate: 0deg;
+  }
+
+  &:active {
+    filter: drop-shadow(0 0 0px #000);
+
+    @media (max-width: 640px) {
+      filter: drop-shadow(0 0 0px #000);
+    }
   }
 `;
 
@@ -28,6 +42,23 @@ const Container = styled.div`
   border: 3px solid #000;
   background: #fff;
   box-sizing: border-box;
+  transition: 0.2s all;
+
+  &:hover {
+    transform: translateX(2px) translateY(2px);
+
+    @media (max-width: 640px) {
+      transform: translateX(1px) translateY(1px);
+    }
+  }
+
+  &:active {
+    transform: translateX(4px) translateY(4px);
+
+    @media (max-width: 640px) {
+      transform: translateX(3px) translateY(3px);
+    }
+  }
 
   @media (max-width: 640px) {
     width: 148px;

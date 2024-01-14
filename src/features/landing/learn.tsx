@@ -99,6 +99,11 @@ const LearnButton = styled.div`
 
   &:hover {
     background-color: #f8d467;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 `;
 

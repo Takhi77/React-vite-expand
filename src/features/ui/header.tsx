@@ -41,6 +41,11 @@ export const Logo = styled(ItemCenter)`
 
   &:hover {
     background-color: #e0ddec;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 
   @media only screen and (max-width: 640px) {
@@ -68,6 +73,11 @@ export const SocialButton = styled(ItemCenter)`
 
   &:hover {
     background-color: #e0ddec;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 `;
 
@@ -124,6 +134,11 @@ const MenuButton = styled(ItemCenter)<{ $active: boolean }>`
 
   &:hover {
     background-color: #f8d467;
+    transform: translateY(2px) translateX(2px);
+  }
+
+  &:active {
+    transform: translateY(4px) translateX(4px);
   }
 
   @media only screen and (max-width: 640px) {
@@ -251,32 +266,32 @@ const MenuIcon = styled.div`
   }
 `;
 
-const shakeAnimation = keyframes`
-0% {rotate: 20deg;}
-50% {rotate: -20deg;}
-100% {rotate: 20deg;}
-`;
+// const shakeAnimation = keyframes`
+// 0% {rotate: 20deg;}
+// 50% {rotate: -20deg;}
+// 100% {rotate: 20deg;}
+// `;
 
-export const ActionIcon = styled(ItemCenter)`
-  justify-content: center;
-  position: absolute;
-  top: -15px;
-  right: -5px;
-  border-radius: 60px;
-  border: 1px solid #252525;
-  background-color: #f8d467;
-  padding: 4px 8px;
+// export const ActionIcon = styled(ItemCenter)`
+//   justify-content: center;
+//   position: absolute;
+//   top: -15px;
+//   right: -5px;
+//   border-radius: 60px;
+//   border: 1px solid #252525;
+//   background-color: #f8d467;
+//   padding: 4px 8px;
 
-  color: #252525;
-  text-transform: uppercase;
-  font-family: Bebas Neue;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+//   color: #252525;
+//   text-transform: uppercase;
+//   font-family: Bebas Neue;
+//   font-size: 16px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
 
-  animation: ${shakeAnimation} 2s ease-in-out infinite;
-`;
+//   animation: ${shakeAnimation} 2s ease-in-out infinite;
+// `;
 
 const VisibleButton = styled.div`
   display: block;

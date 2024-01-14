@@ -71,6 +71,12 @@ const Body = styled.div`
 
 const Item = styled.div`
   cursor: pointer;
+
+  &:hover {
+    ${Subtitle} {
+      color: #e0ddec;
+    }
+  }
 `;
 
 const Links = styled.div`
@@ -101,9 +107,27 @@ const UBFeatureContainer = styled(FeatureContainer)`
 `;
 
 const ULogo = styled(Logo)`
+  &:hover {
+    background-color: #e0ddec;
+    transform: translateY(2px) translateX(2px);
+  }
+
+  &:active {
+    transform: translateY(4px) translateX(4px);
+  }
+
   @media only screen and (max-width: 640px) {
     width: 76px;
     height: 76px;
+
+    &:hover {
+      background-color: #e0ddec;
+      transform: translateY(2px);
+    }
+
+    &:active {
+      transform: translateY(4px);
+    }
   }
 `;
 

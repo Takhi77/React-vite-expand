@@ -1,6 +1,6 @@
 import { Button } from "@features/button";
 import Star from "@features/icons/icon/star";
-import { ActionIcon } from "@features/ui";
+import { ItemCenter } from "@features/ui";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import { Subtitle, Title } from "./library";
@@ -79,18 +79,51 @@ const Right = styled.div`
   }
 `;
 
-export const ButtonStructure = styled.div`
+export const ActionIcon = styled(ItemCenter)`
+  justify-content: center;
+  position: absolute;
+  top: -15px;
+  right: -5px;
   border-radius: 60px;
   border: 1px solid #252525;
+  background-color: #f8d467;
+  padding: 4px 8px;
+
+  color: #252525;
+  text-transform: uppercase;
+  font-family: Bebas Neue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  transition: 0.2s all;
+  rotate: 10deg;
+`;
+
+const BasicButton = styled.div`
+  border-radius: 60px;
+  border: 1px solid #252525;
+  background-color: white;
+  cursor: pointer;
+`;
+
+export const ButtonStructure = styled(BasicButton)`
   position: relative;
   width: fit-content;
-  background-color: white;
   padding: 14px 30px;
-  cursor: pointer;
   transition: 0.2s all;
 
   &:hover {
-    background-color: #f8d467;
+    transform: translateY(2px);
+
+    ${ActionIcon} {
+      rotate: -10deg;
+    }
+  }
+
+  &:active {
+    transform: translateY(4px);
   }
 `;
 
@@ -102,6 +135,28 @@ const ButtonText = styled.h3`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`;
+
+const TeamButton = styled(BasicButton)`
+  color: #252525;
+  font-family: Bebas Neue;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 14px 30px;
+  text-transform: uppercase;
+  width: fit-content;
+  transition: 0.2s all;
+
+  &:hover {
+    background-color: #f8d467;
+    transform: translateY(2px);
+  }
+
+  &:active {
+    transform: translateY(4px);
+  }
 `;
 
 export const Team = () => {
@@ -119,9 +174,7 @@ export const Team = () => {
           </Subtitle>
           <div onClick={() => navigate("/team")}>
             <Button>
-              <ButtonStructure>
-                <ButtonText>stalk the team</ButtonText>
-              </ButtonStructure>
+              <TeamButton>stalk the team</TeamButton>
             </Button>
           </div>
         </List>

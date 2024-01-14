@@ -24,6 +24,7 @@ const Title = styled.h2`
 
   @media (max-width: 640px) {
     font-size: 46px;
+    padding: 48px 0;
   }
 `;
 

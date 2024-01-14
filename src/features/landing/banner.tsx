@@ -22,7 +22,8 @@ const MainContainer = styled.div`
     right: 0;
     bottom: 0;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position-y: bottom;
+    background-position-x: center;
 
     @media only screen and (max-width: 640px) {
       background: url("min_banner.png");
