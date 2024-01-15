@@ -18,7 +18,7 @@ const MainContainer = styled.div`
 `;
 
 const TextDiv = styled.div`
-  padding: 48px 0;
+  padding: 39px 0;
 
   @media (max-width: 640px) {
     padding: 32px 0;
@@ -32,12 +32,13 @@ const Text = styled.h2`
   font-size: 60px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 50px;
   text-transform: uppercase;
   margin: 0;
 
   @media (max-width: 640px) {
     font-size: 32px;
+    line-height: 22px;
   }
 `;
 
@@ -107,7 +108,7 @@ export const Carousel = ({ text }: { text: string }) => {
   return (
     <MainContainer>
       <TextDiv>
-        <ParallaxText baseVelocity={-1}>
+        <ParallaxText baseVelocity={-0.5}>
           <Text>{text}</Text>
         </ParallaxText>
       </TextDiv>

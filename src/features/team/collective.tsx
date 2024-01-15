@@ -58,9 +58,8 @@ const MemberList = [
   },
   {
     role: "cto",
-    name: "Harri",
-    explain:
-      "Solution architect, Cardano developer, open source lover, previously work at MLabs.",
+    name: "Felix",
+    explain: "Solution architect, Cardano developer, open source lover.",
     twitter: "h",
     color: "#CAF2FF",
     avatar: "members/3.png",

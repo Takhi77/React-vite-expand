@@ -308,7 +308,12 @@ export function Header() {
   return (
     <MainContainer>
       <HeaderContainer>
-        <div onClick={() => navigate("/")}>
+        <div
+          onClick={() => {
+            navigate("/");
+            setActiveMenu(false);
+          }}
+        >
           <Button style="Logo">
             <Logo>
               <LogoIcon />

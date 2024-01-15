@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Group, Image, Title, TitleImage } from "./welcome";
+import { Group, Image, Span, Title, TitleImage } from "./welcome";
 import icon from "../../assets/img/main/black_icon.png";
 import { SocialCard } from "./socialCard";
 
@@ -45,7 +45,10 @@ export const Connect = () => {
       <UGroup>
         <TitleImage src={icon} />
         <Title>
-          Konnect <Image src={icon} />
+          Konnect{" "}
+          <Span>
+            <Image src={icon} />
+          </Span>
           with us
         </Title>
       </UGroup>

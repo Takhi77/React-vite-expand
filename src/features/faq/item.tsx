@@ -80,8 +80,7 @@ const ActiveButton = styled.div<{ $active: boolean }>`
     font-family: BarricadaW01-Regular;
     font-size: 100px;
     font-style: normal;
-    font-weight: 100;
-    line-height: 40px;
+    line-height: 10px;
     margin: 0;
     transform: scale(1.5, 1);
 
@@ -97,8 +96,7 @@ const ActiveButton = styled.div<{ $active: boolean }>`
     css`
       h2 {
         &:last-child {
-          transform: rotate(90deg) scale(1.5, 1) translateY(-2px)
-            translateX(1px);
+          transform: rotate(90deg) scale(1.5, 1);
         }
       }
     `}

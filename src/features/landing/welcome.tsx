@@ -57,6 +57,8 @@ const Content = styled.h3`
 
 export const Image = styled.img`
   height: 94px;
+  position: absolute;
+  left: 0;
 
   @media only screen and (max-width: 640px) {
     display: none;
@@ -84,6 +86,16 @@ export const TitleImage = styled.img`
   }
 `;
 
+export const Span = styled.span`
+  position: relative;
+  width: 60px;
+  padding: 0 30px;
+
+  @media only screen and (max-width: 640px) {
+    padding: 0;
+  }
+`;
+
 export const Welcome = () => {
   return (
     <MainContainer>
@@ -91,7 +103,10 @@ export const Welcome = () => {
         <Group>
           <TitleImage src={icon} />
           <Title>
-            Say hello to the Kiki <Image src={icon} />
+            Say hello to the Kiki{" "}
+            <Span>
+              <Image src={icon} />
+            </Span>
             Koalas
           </Title>
         </Group>

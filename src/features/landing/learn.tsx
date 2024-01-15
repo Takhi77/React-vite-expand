@@ -36,7 +36,7 @@ const AvatarAnimBoard = styled.div`
 `;
 
 const DropShadow = styled.div`
-  filter: drop-shadow(0 6px 0px #000) drop-shadow(0 0px 5px #252525);
+  filter: drop-shadow(0 16px 0px #000);
 `;
 
 const Image = styled.img`
@@ -151,6 +151,28 @@ const CarouselContainer = styled.div`
   margin-right: 90px;
   transition: all 0.2s;
   animation: ${ColorChange} 10s infinite;
+
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    z-index: 1;
+    position: absolute;
+    content: "";
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
+    background: url("carousel/vector.png");
+    background-repeat: no-repeat;
+    background-position-x: -1px;
+
+    @media (max-width: 640px) {
+      background-size: 298px;
+      background-position-x: -1px;
+      background-position-y: -1px;
+    }
+  }
 
   @media (max-width: 1279px) {
     margin: 0;

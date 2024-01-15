@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Group, Image, Title, TitleImage } from "./welcome";
+import { Group, Image, Span, Title, TitleImage } from "./welcome";
 import icon from "../../assets/img/main/black_icon.png";
 import { Subtitle } from "./learn";
 
@@ -42,7 +42,10 @@ export const Support = () => {
       <UGroup>
         <TitleImage src={icon} />
         <Title>
-          Supporting <Image src={icon} />
+          Supporting{" "}
+          <Span>
+            <Image src={icon} />
+          </Span>
           Koala konservation
         </Title>
       </UGroup>
