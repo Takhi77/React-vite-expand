@@ -80,18 +80,18 @@ const LinkText = styled.h2`
   }
 `;
 
-const Item = styled.div`
+const Item = styled.div<{ $type?: boolean }>`
   cursor: pointer;
   position: relative;
   width: fit-content;
 
   &:hover {
-    ${LinkText} {
-      text-shadow: 10px 4px 0px #f8d467;
+    ${ActionIcon} {
+      rotate: 10deg;
     }
 
-    ${ActionIcon} {
-      rotate: -10deg;
+    ${LinkText} {
+      text-shadow: ${({ $type }) => ($type ? "" : "10px 4px 0px #f8d467")};
     }
   }
 `;
@@ -145,11 +145,11 @@ export const Menu = () => {
           >
             <LinkText>FAQs</LinkText>
           </Item>
-          <Item>
+          <Item $type={true}>
             <LinkText>Whitepaper</LinkText>
             <ActionIcon>soon</ActionIcon>
           </Item>
-          <Item>
+          <Item $type={true}>
             <LinkText>Kiki Kasino</LinkText>
             <ActionIcon>soon</ActionIcon>
           </Item>

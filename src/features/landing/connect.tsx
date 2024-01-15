@@ -28,7 +28,7 @@ const MainContainer = styled.div`
 
 const UGroup = styled(Group)`
   max-width: 976px;
-  width: calc(100% - 36px);
+  width: calc(100% - 60px);
 `;
 
 const SocialGroup = styled.div`

@@ -3,6 +3,7 @@ import { Button } from "@features/button";
 import Star from "@features/icons/icon/star";
 import { styled } from "styled-components";
 import basic from "../../assets/img/main/basic.png";
+import { ActionIcon, ButtonStructure } from "./team";
 
 const MainContainer = styled.div`
   max-width: 100vw;
@@ -64,6 +65,10 @@ export const Title = styled.h2`
   }
 `;
 
+const UTitle = styled(Title)`
+  max-width: 400px;
+`;
+
 export const Subtitle = styled.h3`
   color: #252525;
   font-family: Rubik;
@@ -82,31 +87,41 @@ export const Subtitle = styled.h3`
   }
 `;
 
-const LibraryButton = styled.div`
+const LibraryButton = styled.h3`
+  margin: 0;
   color: #252525;
   font-family: Bebas Neue;
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 14px 30px;
-  border-radius: 60px;
-  border: 1px solid #252525;
-  text-transform: uppercase;
-  background-color: white;
-  cursor: pointer;
-  width: fit-content;
-  transition: 0.2s all;
-
-  &:hover {
-    background-color: #f8d467;
-    transform: translateY(2px);
-  }
-
-  &:active {
-    transform: translateY(4px);
-  }
 `;
+
+// const LibraryButton = styled.div`
+//   color: #252525;
+//   font-family: Bebas Neue;
+//   font-size: 26px;
+//   font-style: normal;
+//   font-weight: 400;
+//   line-height: normal;
+//   padding: 14px 30px;
+//   border-radius: 60px;
+//   border: 1px solid #252525;
+//   text-transform: uppercase;
+//   background-color: white;
+//   cursor: pointer;
+//   width: fit-content;
+//   transition: 0.2s all;
+
+//   &:hover {
+//     background-color: #f8d467;
+//     transform: translateY(2px);
+//   }
+
+//   &:active {
+//     transform: translateY(4px);
+//   }
+// `;
 
 const Right = styled.div`
   display: flex;
@@ -133,14 +148,17 @@ export const Library = () => {
     <MainContainer>
       <Left>
         <Star />
-        <Title>A tangible kollectible</Title>
+        <UTitle>Kiki Kasino</UTitle>
         <Subtitle>
           At Kiki Koalas, we believe in making your NFT ownership experience
-          truly tangible. When you own a Kiki Koala, you unlock access to 3D
-          files for endless creative possibilities.
+          truly tangible. When you own a Kiki Koala, you unlock revenue
+          distribution from the house earnings.
         </Subtitle>
         <Button>
-          <LibraryButton>Kiki Kasino</LibraryButton>
+          <ButtonStructure>
+            <LibraryButton>Kiki Kasino</LibraryButton>
+            <ActionIcon>soon</ActionIcon>
+          </ButtonStructure>
         </Button>
       </Left>
       <Right>

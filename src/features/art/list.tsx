@@ -19,9 +19,13 @@ const Header = styled.div`
   }
 `;
 
+const UTitle = styled(Title)`
+  width: calc(100% - 64px);
+`;
+
 const Body = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, auto);
 `;
 
 const ArtLists = [
@@ -65,7 +69,7 @@ export const List = () => {
   return (
     <MainContainer>
       <Header>
-        <Title>The keystones to our koalas</Title>
+        <UTitle>The keystones to our koalas</UTitle>
       </Header>
       <Body>
         {ArtLists.map((data, index) => (

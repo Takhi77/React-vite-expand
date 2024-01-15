@@ -98,7 +98,7 @@ export const ActionIcon = styled(ItemCenter)`
   line-height: normal;
 
   transition: 0.2s all;
-  rotate: 10deg;
+  rotate: -10deg;
 `;
 
 const BasicButton = styled.div`
@@ -118,7 +118,7 @@ export const ButtonStructure = styled(BasicButton)`
     transform: translateY(2px);
 
     ${ActionIcon} {
-      rotate: -10deg;
+      rotate: 10deg;
     }
   }
 

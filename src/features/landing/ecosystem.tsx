@@ -51,7 +51,7 @@ const List = styled.div`
   flex-direction: column;
   gap: 38px;
   justify-content: center;
-  width: 462px;
+  width: 553px;
 
   @media only screen and (max-width: 1279px) {
     align-items: center;

@@ -40,12 +40,13 @@ const List = styled.div`
   margin-right: 147px;
   gap: 18px;
   max-width: 462px;
-  width: calc(100% - 40px);
+  width: calc(100% - 42px);
 
   @media (max-width: 1279px) {
     align-items: center;
     margin: 0;
     padding: 58px 0;
+    gap: 32px;
   }
 `;
 

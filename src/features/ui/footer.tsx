@@ -74,7 +74,7 @@ const Item = styled.div`
 
   &:hover {
     ${Subtitle} {
-      color: #e0ddec;
+      color: white;
     }
   }
 `;

@@ -107,7 +107,7 @@ export const Carousel = ({ text }: { text: string }) => {
   return (
     <MainContainer>
       <TextDiv>
-        <ParallaxText baseVelocity={-3}>
+        <ParallaxText baseVelocity={-1}>
           <Text>{text}</Text>
         </ParallaxText>
       </TextDiv>
