@@ -1,3 +1,5 @@
+import Minuse from "@features/icons/icon/minuse";
+import Plus from "@features/icons/icon/plus";
 import { css, styled } from "styled-components";
 
 interface faqProps {
@@ -73,34 +75,42 @@ const Subtitle = styled.h3`
   }
 `;
 
-const ActiveButton = styled.div<{ $active: boolean }>`
-  position: relative;
-  h2 {
-    color: #252525;
-    font-family: BarricadaW01-Regular;
-    font-size: 100px;
-    font-style: normal;
-    line-height: 10px;
-    margin: 0;
-    transform: scale(1.5, 1);
-
-    &:last-child {
-      position: absolute;
-      top: 0;
-      transition: 0.2s all linear;
-    }
-  }
-
-  ${({ $active }) =>
-    $active &&
-    css`
-      h2 {
-        &:last-child {
-          transform: rotate(90deg) scale(1.5, 1);
-        }
-      }
-    `}
+const StateButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
 `;
+
+// const ActiveButton = styled.div<{ $active: boolean }>`
+//   position: relative;
+//   h2 {
+//     color: #252525;
+//     font-family: BarricadaW01-Regular;
+//     font-size: 100px;
+//     font-style: normal;
+//     line-height: 10px;
+//     margin: 0;
+//     transform: scale(1.5, 1);
+
+//     &:last-child {
+//       position: absolute;
+//       top: 0;
+//       transition: 0.2s all linear;
+//     }
+//   }
+
+//   ${({ $active }) =>
+//     $active &&
+//     css`
+//       h2 {
+//         &:last-child {
+//           transform: rotate(90deg) scale(1.5, 1);
+//         }
+//       }
+//     `}
+// `;
 
 export const Item = ({
   data,
@@ -112,7 +122,6 @@ export const Item = ({
   active: number;
 }) => {
   const handleSet = () => {
-    console.log(active, data);
     if (active !== data.id) {
       setActive(data.id);
     } else if (active === data.id) {
@@ -125,10 +134,13 @@ export const Item = ({
       <MainContainer onClick={handleSet}>
         <Container>
           <Title>{data.title}</Title>
-          <ActiveButton $active={active !== data.id}>
+          <StateButton>
+            {active !== data.id ? <Plus /> : <Minuse />}
+          </StateButton>
+          {/* <ActiveButton $active={active !== data.id}>
             <h2>-</h2>
             <h2>-</h2>
-          </ActiveButton>
+          </ActiveButton> */}
         </Container>
       </MainContainer>
       <Detail $active={active === data.id}>

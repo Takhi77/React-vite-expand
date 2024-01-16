@@ -32,7 +32,11 @@ const Collectives = styled.div`
   max-width: 1440px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 `;
 
 const MemberList = [

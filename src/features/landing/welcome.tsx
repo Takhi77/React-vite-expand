@@ -81,6 +81,8 @@ export const TitleImage = styled.img`
   width: fit-content;
   display: none;
 
+  aspect-ratio: 60/94;
+
   @media only screen and (max-width: 640px) {
     display: block;
   }

@@ -17,6 +17,11 @@ const MainContainer = styled.div`
   border: 3px solid #000;
   display: grid;
   grid-template-rows: auto 1fr;
+
+  @media (max-width: 640px) {
+    border: none;
+    border-top: 3px solid #000;
+  }
 `;
 
 const Abatar = styled.div<{ $color: string }>`
@@ -41,7 +46,7 @@ const Cardboard = styled.div`
   border-top: 3px solid #000;
 
   @media (max-width: 640px) {
-    padding: 30px 18px;
+    padding: 30px 21px;
     gap: 44px;
   }
 `;
@@ -92,7 +97,6 @@ const Name = styled.h2`
 
 const Detail = styled.h3`
   max-width: 381px;
-  width: calc(100% - 40px);
   color: #252525;
   font-family: Rubik;
   font-size: 26px;
@@ -102,6 +106,7 @@ const Detail = styled.h3`
   margin: 0;
 
   @media (max-width: 640px) {
+    justify-self: center;
     text-align: center;
   }
 `;
