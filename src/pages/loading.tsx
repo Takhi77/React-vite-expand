@@ -3,7 +3,7 @@ import { keyframes, styled } from "styled-components";
 
 const MainContainer = styled.div`
   max-width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
   background-color: black;
   display: flex;
   align-items: center;

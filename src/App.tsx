@@ -21,7 +21,10 @@ function App() {
   }, []);
 
   if (state === "loading") {
-    return <Loading />;
+    return <>
+      <GlobalStyle />
+      <Loading />
+    </>
   }
 
   return (

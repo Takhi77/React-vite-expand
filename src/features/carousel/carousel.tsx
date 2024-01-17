@@ -21,7 +21,7 @@ const TextDiv = styled.div`
   padding: 39px 0;
 
   @media (max-width: 640px) {
-    padding: 32px 0;
+    padding: 29px 0;
   }
 `;
 
@@ -38,7 +38,7 @@ const Text = styled.h2`
 
   @media (max-width: 640px) {
     font-size: 32px;
-    line-height: 22px;
+    line-height: 28px;
   }
 `;
 

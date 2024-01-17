@@ -111,31 +111,31 @@ const ColorChange = keyframes`
 0% {
     background-color: #F8D467;
   }
-18% {
+17% {
     background-color: #F8D467;
   }
   19% {
     background-color: #9DC05A;
   }
-  38% {
+  37% {
     background-color: #9DC05A;
   }
   39% {
     background-color: #FFDCF7;
   }
-  58% {
+  57% {
     background-color: #FFDCF7;
   }
   59% {
     background-color: #CAF2FF;
   }
-  78% {
+  77% {
     background-color: #CAF2FF;
   }
   79% {
     background-color: #D7F6CB;
   }
-  98% {
+  97% {
     background-color: #D7F6CB;
   }
   100% {
