@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { BsDiscord, BsTwitterX } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
+import { ActionIcon } from "./team";
 
 const MainContainer = styled.div<{ $angle: string }>`
   transition: 0.2s all;
@@ -43,9 +44,14 @@ const Container = styled.div`
   background: #fff;
   box-sizing: border-box;
   transition: 0.2s all;
+  position: relative;
 
   &:hover {
     transform: translateX(2px) translateY(2px);
+
+    ${ActionIcon} {
+      rotate: 10deg;
+    }
 
     @media (max-width: 640px) {
       transform: translateX(1px) translateY(1px);
@@ -114,13 +120,16 @@ export const SocialCard = ({ type }: { type: string }) => {
       $angle={type === "twitter" ? "5" : type === "telegram" ? "-6" : "0"}
     >
       <Container>
+        {type !== 'twitter' && (
+          <ActionIcon>soon</ActionIcon>
+        )}
         <Banner
           $color={
             type === "twitter"
               ? "#000"
               : type === "telegram"
-              ? "#0094FF"
-              : "#5F70F5"
+                ? "#0094FF"
+                : "#5F70F5"
           }
         >
           <Icon>

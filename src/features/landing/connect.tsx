@@ -53,7 +53,11 @@ export const Connect = () => {
         </Title>
       </UGroup>
       <SocialGroup>
-        <SocialCard type="twitter" />
+        <a href="https://twitter.com/kikikoalasnft" target="_blank" rel="noopener noreferrer" style={{
+          textDecoration: 'none'
+        }}>
+          <SocialCard type="twitter" />
+        </a>
         <SocialCard type="discord" />
         <SocialCard type="telegram" />
       </SocialGroup>

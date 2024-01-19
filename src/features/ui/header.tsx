@@ -121,7 +121,7 @@ const ButtonText = styled.h2`
   }
 `;
 
-const MenuButton = styled(ItemCenter)<{ $active: boolean }>`
+const MenuButton = styled(ItemCenter) <{ $active: boolean }>`
   justify-content: center;
   gap: 10px;
   height: 66px;
@@ -323,18 +323,20 @@ export function Header() {
         <FeatureContainer>
           <VisibleButton>
             <Button>
-              <SocialButton>
-                <TwitterIcon />
-              </SocialButton>
+              <a href="https://twitter.com/kikikoalasnft" target="_blank" rel="noopener noreferrer">
+                <SocialButton>
+                  <TwitterIcon />
+                </SocialButton>
+              </a>
             </Button>
           </VisibleButton>
-          <VisibleButton>
+          {/* <VisibleButton>
             <Button>
               <SocialButton>
                 <DiscordIcon />
               </SocialButton>
             </Button>
-          </VisibleButton>
+          </VisibleButton> */}
           {/* <Button>
             <LearnMoreButton>
               <MoreText>learn more</MoreText>

@@ -13,7 +13,7 @@ const MainContainer = styled.div<{ $active: boolean }>`
   position: fixed;
   overflow: hidden;
   right: 0;
-  transition: 1.5s all;
+  transition: 1s all;
   z-index: 3;
 
   display: flex;

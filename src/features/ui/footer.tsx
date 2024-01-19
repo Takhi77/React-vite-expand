@@ -4,7 +4,7 @@ import { Subtitle } from "@features/landing/learn";
 import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 import {
-  DiscordIcon,
+  // DiscordIcon,
   FeatureContainer,
   ItemCenter,
   Logo,
@@ -150,15 +150,17 @@ export function Footer() {
           </LogoGroup>
           <UFeatureContainer>
             <Button>
-              <SocialButton>
-                <TwitterIcon />
-              </SocialButton>
+              <a href="https://twitter.com/kikikoalasnft" target="_blank" rel="noopener noreferrer">
+                <SocialButton>
+                  <TwitterIcon />
+                </SocialButton>
+              </a>
             </Button>
-            <Button>
+            {/* <Button>
               <SocialButton>
                 <DiscordIcon />
               </SocialButton>
-            </Button>
+            </Button> */}
           </UFeatureContainer>
         </Header>
         <Body>
@@ -191,15 +193,17 @@ export function Footer() {
         </BLinks>
         <UBFeatureContainer>
           <Button>
-            <SocialButton>
-              <TwitterIcon />
-            </SocialButton>
+            <a href="https://twitter.com/kikikoalasnft" target="_blank" rel="noopener noreferrer">
+              <SocialButton>
+                <TwitterIcon />
+              </SocialButton>
+            </a>
           </Button>
-          <Button>
+          {/* <Button>
             <SocialButton>
               <DiscordIcon />
             </SocialButton>
-          </Button>
+          </Button> */}
         </UBFeatureContainer>
       </FooterContainer>
     </MainContainer>
